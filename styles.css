@@ -1,0 +1,7 @@
+.video {
+    display: none; /* Oculta todos os vídeos inicialmente */
+}
+
+.active {
+    display: block; /* Mostra o vídeo ativo */
+}

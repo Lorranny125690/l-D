@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    border-bottom: 4px solid rgb(255, 255, 255);
+    color: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    gap: 5%;
+}
+
+.texto {
+    font-size: auto;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(240, 248, 255, 0);
+    padding: 5px;
+}
+
+.texto.clicked {
+    background-color: white;
+    color: black;
+}
+
+#oi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover; 
+    overflow: hidden;
+}
+
+.video {
+    display: none; 
+    top: 0;
+    left: 0;
+    object-fit: cover; 
+    background-size: cover;
+    height: 100vh;
+    background-repeat: repeat;
+}
+
+.video:first-child {
+    display: block; 
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove bordas */
+    padding: 0; /* Remove padding */
+    cursor: pointer;
+}
+
+.video-container {
+    position: relative; /* Permite o posicionamento absoluto das setas */
+    height: 100%; /* Para ocupar a altura desejada */
+    display: flex; /* Flex para organizar os vídeos e botões */
+    justify-content: center; /* Centraliza os vídeos */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.char {
+    display: block; /* Exibe o primeiro vídeo */
+    width: 100%; /* Para que o vídeo ocupe toda a largura da div */
+}
+
+.nav-button {
+    position: absolute; /* Para permitir o posicionamento nas extremidades */
+    background-color: transparent; /* Fundo transparente */
+    border: none;
+    cursor: pointer;
+    width: 50px; /* Largura da seta */
+    height: 50px; /* Altura da seta */
+    z-index: 10; /* Certifique-se de que as setas ficam acima dos vídeos */
+    transition: background-color 0.3s;
+}
+
+/* Estilo da seta anterior */
+#prev-button {
+    left: 20px; /* Espaçamento à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Alinha ao centro */
+    background-image: url('objs/left.png'); /* Insira o caminho da imagem da seta esquerda */
+    background-size: contain; /* Ajusta a imagem para caber no botão */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    width: 50px; /* Define largura do botão */
+    height: 50px; /* Define altura do botão */
+}
+
+/* Estilo da seta próxima */
+#next-button {
+    right: 20px; /* Espaçamento à direita */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Alinha ao centro */
+    background-image: url('objs/setas.png'); /* Insira o caminho da imagem da seta direita */
+    background-size: contain; /* Ajusta a imagem para caber no botão */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    width: 50px; /* Define largura do botão */
+    height: 50px; /* Define altura do botão */
+}
+
+.nav-button:hover {
+    opacity: 0.8; /* Leve transparência ao passar o mouse */
+}
